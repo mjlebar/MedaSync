@@ -37,11 +37,19 @@ function processInput(input) {
           );
           break;
       }
+    } else if (type === "") {
+      // if we just have an empty line, we should skip it
+      for (let word of words) {
+        // so we check all the words - if any of them have content, then we have an error at this line
+        if (word.length > 0)
+          console.log(
+            `Error at line ${i + 1}: ${input[i]} \n Invalid type marker`
+          );
+      }
+      // if none of them do, we just move on to the next line, so no action needs to be taken 
     } else {
-      // If the type is not patient or action, we have an error
-      console.log(
-        `Error at line ${i + 1}: ${input[i]} \n No type marker specified`
-      );
+      // If the type is not patient or action, and the line is not blank, we have an error
+      console.log(`Error at line ${i + 1}: ${input[i]} \n Invalid type marker`);
     }
   }
 

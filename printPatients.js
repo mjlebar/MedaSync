@@ -35,8 +35,8 @@ function timeDiff(laterTime, earlierTime) {
   const milliseconds = laterTime.getTime() - earlierTime.getTime();
   // first we calculate the exact difference in time
 
-  if (milliseconds < 0) return -1;
-  //   if we have a negative answer, one of the times has been entered correctly, so we return -1 to get an error from printPatients
+  if (milliseconds < 0) return false;
+  //   if we have a negative answer, one of the times has been entered correctly, so we return false to get an error from printPatients
 
   const hours = Math.floor(milliseconds / 3600000).toFixed(1);
   // There are 3,600,000 milliseconds in an hour, so we just find how many whole hours are in this period of time...
