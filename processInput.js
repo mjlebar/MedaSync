@@ -17,6 +17,7 @@ function processInput(input) {
       // otherwise, we first need to find the patient corresponding to the action
       const name = words[2];
       const actions = patients[name];
+      // the fact that we can find the relevant actions value in O(1) here is why we made patients an object rather than an array
 
       // once we've found them, we want to add the appropriate type of action
       switch (words[1]) {
@@ -46,7 +47,7 @@ function processInput(input) {
             `Error at line ${i + 1}: ${input[i]} \n Invalid type marker`
           );
       }
-      // if none of them do, we just move on to the next line, so no action needs to be taken 
+      // if none of them do, we just move on to the next line, so no action needs to be taken
     } else {
       // If the type is not patient or action, and the line is not blank, we have an error
       console.log(`Error at line ${i + 1}: ${input[i]} \n Invalid type marker`);

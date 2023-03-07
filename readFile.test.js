@@ -5,6 +5,7 @@ const consoleSpy = jest.spyOn(global.console, "log");
 afterEach(() => {
   consoleSpy.mockClear();
 });
+// this makes sure the number of times console.log has been called is reset after each test
 
 test("Expect correct case to output a line for each patient, and check patients' output to make sure it's correct", async () => {
   await readFile("./ex1.txt");
@@ -20,7 +21,7 @@ test("Expect correct case to output a line for each patient, and check patients'
   );
 });
 
-test("When a discharge is missing for patient John, we should be alerted of that and other patients should output correctly", async () => {
+test("Expect when a discharge is missing for patient John, we should be alerted of that and other patients should output correctly", async () => {
   await readFile("./ex2.txt");
   expect(consoleSpy).toHaveBeenCalledTimes(3);
   expect(consoleSpy).toHaveBeenCalledWith(
@@ -34,7 +35,7 @@ test("When a discharge is missing for patient John, we should be alerted of that
   );
 });
 
-test("When a intake is missing for patient Anne, we should be alerted of that and other patients should output correctly", async () => {
+test("Expect that when an intake is missing for patient Anne, we should be alerted of that and other patients should output correctly", async () => {
   await readFile("./ex3.txt");
   expect(consoleSpy).toHaveBeenCalledTimes(3);
   expect(consoleSpy).toHaveBeenCalledWith(
@@ -48,7 +49,7 @@ test("When a intake is missing for patient Anne, we should be alerted of that an
   );
 });
 
-test("If a discharge takes place before intake, we should be alerted of that, and other patients should be outputted correctly", async () => {
+test("Expect that if a discharge takes place before intake, we should be alerted of that, and other patients should be outputted correctly", async () => {
   await readFile("./ex4.txt");
   expect(consoleSpy).toHaveBeenCalledTimes(3);
   expect(consoleSpy).toHaveBeenCalledWith(

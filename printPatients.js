@@ -15,7 +15,7 @@ function printPatients(patients) {
       const timeStayed = timeDiff(actions.discharge, actions.intake);
       // calculates the time between discharge and intake and returns it in a nice string format
       if (!timeStayed) {
-        // if we set an intake date after a discharge date, the timeDiff function will return -1 and we will log an error
+        // if we set an intake date after a discharge date, the timeDiff function will return false and we will log an error
         console.log(
           `Error for patient ${patient}: discharge takes place before intake`
         );
