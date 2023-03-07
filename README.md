@@ -1,7 +1,7 @@
 # MedaSync
 
 Small coding assignment for MedaSync.
-The basic structure of this problem is broken up by module - each module contains one main function (maybe with a small helper function). I wrote the program in JavaScript, as that is the language I've used most, to be run using Node.js.
+The basic structure of this program is broken up by module - each module contains one main function (maybe with a small helper function). I wrote the program in JavaScript, as that is the language I've used most, to be run using Node.js.
 
 The program starts when index.js is called - if you pass it a file (or a list of files) to be read at the command line, it immediately sends those files to the readFile function. If not, it prompts the user for a file name, then sends that file to the readFile function.
 
